@@ -1,6 +1,6 @@
 ---
 # Number of nifi nodes
-replicaCount: 1
+replicaCount: 2
 
 ## Set default image, imageTag, and imagePullPolicy.
 ## ref: https://hub.docker.com/r/apache/nifi/
@@ -304,7 +304,7 @@ zookeeper:
   ## If the Zookeeper Chart is disabled a URL and port are required to connect
   url: ""
   port: 2181
-  replicaCount: 3
+  replicaCount: 2
 
 # ------------------------------------------------------------------------------
 # Nifi registry:
