@@ -292,7 +292,7 @@ ca:
     name: nifi-ca
   openshift:
     scc:
-      enabled: true
+      enabled: false
 
 # ------------------------------------------------------------------------------
 # Zookeeper:
