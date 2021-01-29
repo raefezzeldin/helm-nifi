@@ -1,6 +1,6 @@
 ---
 # Number of nifi nodes
-replicaCount: 2
+replicaCount: 1
 
 ## Set default image, imageTag, and imagePullPolicy.
 ## ref: https://hub.docker.com/r/apache/nifi/
@@ -56,7 +56,7 @@ properties:
   externalSecure: false
   isNode: true # set to false if ldap is enabled
   httpPort: 8080 # set to null if ldap is enabled
-  httpsPort: 9443 # set to 9443 if ldap is enabled
+  httpsPort: null # set to 9443 if ldap is enabled
   webProxyHost:
   clusterPort: 6007
   clusterSecure: false # set to true if ldap is enabled
@@ -270,8 +270,8 @@ openshift:
     enabled: false
   route:
     enabled: false
-    host: 172.30.0.102.xip.io
-    path: /nifi
+    #host: www.test.com
+    #path: /nifi
 
 # ca server details
 # Setting this true would create a nifi-toolkit based ca server
@@ -288,8 +288,8 @@ ca:
   admin:
     cn: admin
   serviceAccount:
-    create: true
-    name: nifi-ca
+    create: false
+    #name: nifi-ca
   openshift:
     scc:
       enabled: false
@@ -304,7 +304,7 @@ zookeeper:
   ## If the Zookeeper Chart is disabled a URL and port are required to connect
   url: ""
   port: 2181
-  replicaCount: 2
+  replicaCount: 3
 
 # ------------------------------------------------------------------------------
 # Nifi registry:
@@ -312,7 +312,7 @@ zookeeper:
 registry:
   ## If true, install the Nifi registry
   enabled: true
-  url: "172.30.0.102/nifi-registry"
+  url: ""
   port: 80
   ## Add values for the nifi-registry here
   ## ref: https://github.com/dysnix/charts/blob/master/nifi-registry/values.yaml
