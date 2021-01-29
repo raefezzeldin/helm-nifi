@@ -300,10 +300,11 @@ ca:
 zookeeper:
   ## If true, install the Zookeeper chart
   ## ref: https://github.com/bitnami/charts/blob/master/bitnami/zookeeper/values.yaml
-  deploy:
-    enabled: true
-  nodeList: zk-0.zk-hs #,zk-1.zk-hs,zk-2.zk-hs
-  nodePort: 2888
+  enabled: true
+  ## If the Zookeeper Chart is disabled a URL and port are required to connect
+  url: ""
+  port: 2181
+  replicaCount: 3
 
 # ------------------------------------------------------------------------------
 # Nifi registry:
