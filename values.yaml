@@ -56,7 +56,7 @@ properties:
   externalSecure: false
   isNode: true # set to false if ldap is enabled
   httpPort: 8080 # set to null if ldap is enabled
-  httpsPort: null # set to 9443 if ldap is enabled
+  httpsPort: 9443 # set to 9443 if ldap is enabled
   webProxyHost:
   clusterPort: 6007
   clusterSecure: false # set to true if ldap is enabled
@@ -267,9 +267,9 @@ envFrom: []
 ## Use the following varables in order to enable Route and Security Context Constraint creation
 openshift:
   scc:
-    enabled: true
+    enabled: false
   route:
-    enabled: true
+    enabled: false
     host: 172.30.0.102.xip.io
     path: /nifi
 
