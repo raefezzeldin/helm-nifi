@@ -267,18 +267,18 @@ envFrom: []
 ## Use the following varables in order to enable Route and Security Context Constraint creation
 openshift:
   scc:
-    enabled: false
+    enabled: true
   route:
-    enabled: false
-    #host: www.test.com
-    #path: /nifi
+    enabled: true
+    host: 172.30.0.102.xip.io
+    path: /nifi
 
 # ca server details
 # Setting this true would create a nifi-toolkit based ca server
 # The ca server will be used to generate self-signed certificates required setting up secured cluster
 ca:
   ## If true, enable the nifi-toolkit certificate authority
-  enabled: false
+  enabled: true
   persistence:
     enabled: true
   server: ""
@@ -288,11 +288,11 @@ ca:
   admin:
     cn: admin
   serviceAccount:
-    create: false
-    #name: nifi-ca
+    create: true
+    name: nifi-ca
   openshift:
     scc:
-      enabled: false
+      enabled: true
 
 # ------------------------------------------------------------------------------
 # Zookeeper:
@@ -304,7 +304,7 @@ zookeeper:
   ## If the Zookeeper Chart is disabled a URL and port are required to connect
   url: ""
   port: 2181
-  replicaCount: 3
+  replicaCount: 2
 
 # ------------------------------------------------------------------------------
 # Nifi registry:
@@ -312,7 +312,7 @@ zookeeper:
 registry:
   ## If true, install the Nifi registry
   enabled: true
-  url: ""
+  url: "172.30.0.102/nifi-registry"
   port: 80
   ## Add values for the nifi-registry here
   ## ref: https://github.com/dysnix/charts/blob/master/nifi-registry/values.yaml

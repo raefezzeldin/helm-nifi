@@ -18,12 +18,12 @@ maintainers:
     url: https://github.com/alexnuttinck
 dependencies:
   - name: zookeeper
-    version: 3.4.10
+    version: 5.23.0
     #repository: https://charts.bitnami.com/bitnami
     condition: zookeeper.enabled
   - name: nifi-registry
     alias: registry
-    version: 0.2.1
+    version: 0.1.1
     #repository: https://dysnix.github.io/charts/
     condition: registry.enabled
   - name: ca
